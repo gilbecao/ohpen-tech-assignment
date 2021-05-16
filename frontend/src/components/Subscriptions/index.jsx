@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
-import { loadSubscriptions } from '../../redux/actions/actionCreators';
+import { loadSubscriptions, updateSubscription } from '../../redux/actions/actionCreators';
+import SubscriptionCard from './SubscriptionCard';
 
 function Subscriptions({ subscriptions, dispatch }) {
   useEffect(() => {
@@ -9,14 +10,17 @@ function Subscriptions({ subscriptions, dispatch }) {
       dispatch(loadSubscriptions());
     }
   }, []);
+
+  function toggleSubscription(subscription) {
+    dispatch(updateSubscription(subscription));
+  }
   return (
     <ul>
       {subscriptions.map((subscription) => (
-        <li>
-          <p>{subscription.title}</p>
-          <p>{subscription.description}</p>
-          <p>{subscription.isEnabled ? 'true' : 'false'}</p>
-        </li>
+        <SubscriptionCard
+          subscription={subscription}
+          toggleSubscription={toggleSubscription}
+        />
       ))}
     </ul>
   );

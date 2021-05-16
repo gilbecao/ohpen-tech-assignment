@@ -25,11 +25,11 @@ export function loadSubscriptions() {
   };
 }
 
-export function updateSubscriptions(subscription) {
+export function updateSubscription(subscription) {
   return async (dispatch) => {
-    const { data } = await axios.put(`${url}/${subscription._id}`);
+    const { data } = await axios.put(`${url}/${subscription._id}`, subscription);
     dispatch({
-      type: actionTypes.LOAD_SUBSCRIPTIONS,
+      type: actionTypes.UPDATE_SUBSCRIPTIONS,
       subscription: data,
     });
   };
