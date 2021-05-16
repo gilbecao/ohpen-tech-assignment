@@ -9,7 +9,7 @@ function SubscriptionCard({ subscription, toggleSubscription }) {
       <input
         type="checkbox"
         data-testid={`toggle-subscription-${subscription._id}`}
-        checked={subscription.isEnabled}
+        checked={subscription.isEnabled || false}
         onChange={() => toggleSubscription({
           _id: subscription._id,
           isEnabled: !subscription.isEnabled,
@@ -21,10 +21,10 @@ function SubscriptionCard({ subscription, toggleSubscription }) {
 
 SubscriptionCard.propTypes = {
   subscription: PropTypes.shape({
-    _id: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    isEnabled: PropTypes.bool.isRequired,
+    _id: PropTypes.string,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    isEnabled: PropTypes.bool,
   }).isRequired,
   toggleSubscription: PropTypes.func.isRequired,
 };

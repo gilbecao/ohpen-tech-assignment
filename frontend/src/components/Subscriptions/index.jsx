@@ -18,6 +18,7 @@ function Subscriptions({ subscriptions, dispatch }) {
     <ul>
       {subscriptions.map((subscription) => (
         <SubscriptionCard
+          key={subscription._id}
           subscription={subscription}
           toggleSubscription={toggleSubscription}
         />
@@ -27,7 +28,12 @@ function Subscriptions({ subscriptions, dispatch }) {
 }
 
 Subscriptions.propTypes = {
-  subscriptions: PropTypes.shape([]).isRequired,
+  subscriptions: PropTypes.arrayOf(PropTypes.shape({
+    _id: PropTypes.string,
+    title: PropTypes.string,
+    description: PropTypes.string,
+    isEnabled: PropTypes.bool,
+  })).isRequired,
   dispatch: PropTypes.func.isRequired,
 };
 
