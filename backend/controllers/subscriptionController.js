@@ -14,7 +14,7 @@ function subscriptionController() {
   async function createSubscription(req, res) {
     try {
       const subscription = new Subscription(req.body);
-      subscription.save();
+      await subscription.save();
       res.json(subscription);
     } catch (error) {
       res.status(500);
