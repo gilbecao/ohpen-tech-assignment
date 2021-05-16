@@ -1,0 +1,38 @@
+export default [
+  {
+    _id: '60a0ddfe6b4b194872373750',
+    id: 1,
+    user_group: 'administrator',
+    title: 'Subscription 1',
+    description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
+    __v: 0,
+    isEnabled: true,
+  },
+  {
+    _id: '60a0de306b4b194872373751',
+    id: 2,
+    user_group: 'rrhh',
+    title: 'Subscription 2',
+    description: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+    __v: 0,
+    isEnabled: false,
+  },
+  {
+    _id: '60a0de466b4b194872373753',
+    id: 4,
+    user_group: 'administrator',
+    title: 'Subscription 4',
+    description: 'It has survived not only five centuries, but also the leap into electronic typesetting.',
+    __v: 0,
+    isEnabled: false,
+  },
+  {
+    _id: '60a0de4e6b4b194872373754',
+    id: 5,
+    user_group: 'rrhh',
+    title: 'Subscription 5',
+    description: 't was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages',
+    __v: 0,
+    isEnabled: true,
+  },
+];

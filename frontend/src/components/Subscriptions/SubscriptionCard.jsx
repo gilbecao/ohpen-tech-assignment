@@ -8,6 +8,7 @@ function SubscriptionCard({ subscription, toggleSubscription }) {
       <p>{subscription.description}</p>
       <input
         type="checkbox"
+        data-testid={`toggle-subscription-${subscription._id}`}
         checked={subscription.isEnabled}
         onChange={() => toggleSubscription({
           _id: subscription._id,
