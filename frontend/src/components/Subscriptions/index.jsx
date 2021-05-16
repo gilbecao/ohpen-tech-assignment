@@ -1,8 +1,13 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
+
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+
 import { loadSubscriptions, updateSubscription } from '../../redux/actions/actionCreators';
 import SubscriptionCard from './SubscriptionCard';
+import SubscriptionEnabled from './SubscriptionsEnabled';
 
 function Subscriptions({ subscriptions, dispatch }) {
   useEffect(() => {
@@ -15,15 +20,23 @@ function Subscriptions({ subscriptions, dispatch }) {
     dispatch(updateSubscription(subscription));
   }
   return (
-    <ul>
-      {subscriptions.map((subscription) => (
-        <SubscriptionCard
-          key={subscription._id}
-          subscription={subscription}
-          toggleSubscription={toggleSubscription}
-        />
-      ))}
-    </ul>
+    <>
+      <Row>
+        {subscriptions.map((subscription) => (
+          <SubscriptionCard
+            key={subscription._id}
+            subscription={subscription}
+            toggleSubscription={toggleSubscription}
+          />
+        ))}
+      </Row>
+      <Row className="mt-5">
+        <Col>
+          <SubscriptionEnabled />
+        </Col>
+      </Row>
+    </>
+
   );
 }
 

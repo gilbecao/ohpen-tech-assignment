@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import { Redirect } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 import { login } from '../../redux/actions/actionCreators';
 
 function Login({ user, dispatch }) {
@@ -10,18 +11,18 @@ function Login({ user, dispatch }) {
       ? <Redirect to="/profile" />
       : (
         <>
-          <button
-            type="button"
+          <Button
+            variant="outline-secondary"
             onClick={() => dispatch(login(true))}
           >
             Login as Admin
-          </button>
-          <button
-            type="button"
+          </Button>
+          <Button
+            variant="outline-secondary"
             onClick={() => dispatch(login(false))}
           >
             Login as RRHH
-          </button>
+          </Button>
         </>
       )
   );

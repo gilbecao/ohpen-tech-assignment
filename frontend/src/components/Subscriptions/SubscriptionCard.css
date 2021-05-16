@@ -1,0 +1,13 @@
+.card {
+  height: 200px;
+}
+
+.card-title {
+  font-family: 'Roboto';
+  font-weight: 300;
+  color: #afafaf;
+}
+
+.card-body p {
+  font-family: 'Roboto Condensed';
+}

@@ -1,0 +1,15 @@
+/** 01. FONTS */
+@font-face { font-family: 'Roboto'; src: url("../src/assets/fonts/Roboto-Light.ttf") format("truetype"); font-weight: 300; font-style: normal; }
+
+@font-face { font-family: 'Roboto'; src: url("../src/assets/fonts/Roboto-Regular.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+
+@font-face { font-family: 'Roboto Condensed'; src: url("../src/assets/fonts/RobotoCondensed-Regular.ttf") format("truetype"); font-weight: normal; font-style: normal; }
+
+body {
+  background-color: #e9edef !important;
+  box-sizing: border-box;
+}
+
+.has-shadow {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.05), 0 6px 20px 0 rgba(0, 0, 0, 0.04);
+}
