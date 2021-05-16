@@ -5,6 +5,7 @@ const subscriptionSchema = Schema({
   user_group: String,
   title: String,
   description: String,
+  isEnabled: Boolean,
 });
 
 module.exports = model('Subscription', subscriptionSchema);
