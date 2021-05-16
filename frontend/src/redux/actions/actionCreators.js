@@ -3,9 +3,10 @@ import actionTypes from './actionTypes';
 
 const url = `${process.env.REACT_APP_API_URL}/subscriptions`;
 
-export function login() {
+export function login(isAdmin) {
   return {
     type: actionTypes.LOGIN,
+    isAdmin,
   };
 }
 

@@ -1,11 +1,12 @@
 import actionTypes from '../actions/actionTypes';
 
 function userReducer(user = {}, action) {
+  const getUserName = (isAdmin) => (isAdmin ? 'admin' : 'rrhh');
   switch (action.type) {
     case actionTypes.LOGIN:
       return {
-        email: 'dev@ohpen.com',
-        role: 'administrator',
+        email: `${getUserName(action.isAdmin)}@ohpen.com`,
+        isAdmin: action.isAdmin,
       };
 
     case actionTypes.LOGOUT:
